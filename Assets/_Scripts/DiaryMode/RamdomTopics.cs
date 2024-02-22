@@ -16,17 +16,21 @@ public class RamdomTopics : MonoBehaviour
 
         if (buttonText != null && buttonTexts.Length > 0)
         {
-            // 设置随机数种子为当前时间的毫秒数
-            Random.InitState(System.DateTime.Now.Millisecond);
-
-            // 随机选择一个文本
-            string randomText = buttonTexts[Random.Range(0, buttonTexts.Length)];
-            // 将文本赋值给按钮
-            buttonText.text = randomText;
+            GenerateTopic();
         }
         else
         {
             Debug.LogWarning("Button text component or array is not set correctly.");
         }
+    }
+
+    public void GenerateTopic()
+    {
+        Random.InitState(System.DateTime.Now.Millisecond);
+
+        // 随机选择一个文本
+        string randomText = buttonTexts[Random.Range(0, buttonTexts.Length)];
+        // 将文本赋值给按钮
+        buttonText.text = randomText;
     }
 }
