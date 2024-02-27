@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Click : MonoBehaviour
@@ -31,22 +32,30 @@ public class Click : MonoBehaviour
         // 检测鼠标左键点击
         if (Input.GetMouseButtonDown(0) && allowClicking)
         {
-            // 发射一条射线检测是否点击到了物体
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            if (EventSystem.current.IsPointerOverGameObject())
             {
-                // 如果点击到了指定标签的物体，则移动摄像机到目标位置并设置旋转
-                if (hit.collider.CompareTag(targetTag))
+                return;
+            }
+            else
+            {
+                // 发射一条射线检测是否点击到了物体
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
                 {
-                    //MoveCamera(targetPosition, targetRotation);
-                    StartCoroutine(MoveCameraSmoothly(targetPosition, targetRotation, movementDuration));
+                    // 如果点击到了指定标签的物体，则移动摄像机到目标位置并设置旋转
+                    if (hit.collider.CompareTag(targetTag))
+                    {
+                        //MoveCamera(targetPosition, targetRotation);
+                        StartCoroutine(MoveCameraSmoothly(targetPosition, targetRotation, movementDuration));
 
-                    Invoke("DelayedOpen", 1.1f);
+                        Invoke("DelayedOpen", 1.1f);
 
-                    allowClicking = false;
+                        allowClicking = false;
 
+                    }
                 }
             }
         }

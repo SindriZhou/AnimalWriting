@@ -9,6 +9,7 @@ TagManager:
   - Bookshelf
   - Door
   - Home
+  - RaycastBlock
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
@@ -22,8 +23,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //选项菜单
-        if (Input.GetKeyDown(KeyCode.Escape))
+            //选项菜单
+            if (Input.GetKeyDown(KeyCode.Escape))
         {
             OptionMenu();
         }
