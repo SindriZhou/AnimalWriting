@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -10,9 +12,12 @@ public class Player : MonoBehaviour
     bool OptionsOpened = false;
 
     //钱
-    public int point = 0; 
+    public int point = 0;
 
-    // Start is called before the first frame update
+    //头像
+    public static Sprite Portrait;
+    public GameObject PorImage;
+
     void Start()
     {
         //检查选项菜单
@@ -20,7 +25,6 @@ public class Player : MonoBehaviour
             OptionsStg1.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
             //选项菜单
@@ -42,5 +46,11 @@ public class Player : MonoBehaviour
             OptionsOpened = false;
             OptionsStg1.SetActive(false);
         }
+    }
+
+    public void SetProtrait(Sprite P)
+    {
+        Portrait = P;
+        PorImage.GetComponent<Image>().sprite = P;
     }
 }
