@@ -269,7 +269,7 @@ MonoBehaviour:
   nameColor: {r: 0, g: 0, b: 0, a: 1}
   soundEffect: {fileID: 0}
   portraits:
-  - {fileID: -2520759210819888809, guid: 8a1f96c93a153e34a98b5f6dd6bbfebd, type: 3}
+  - {fileID: 21300000, guid: e625b2a3e8343304389cf57758696dc3, type: 3}
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   description: 
@@ -1339,7 +1339,7 @@ MonoBehaviour:
   nameColor: {r: 0, g: 0, b: 0, a: 1}
   soundEffect: {fileID: 0}
   portraits:
-  - {fileID: -2520759210819888809, guid: 8a1f96c93a153e34a98b5f6dd6bbfebd, type: 3}
+  - {fileID: 21300000, guid: e625b2a3e8343304389cf57758696dc3, type: 3}
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   description: 
@@ -2928,8 +2928,8 @@ RectTransform:
   m_GameObject: {fileID: 433497667}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.17, y: 1.17, z: 1.17}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1290326406}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2978,7 +2978,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4153240674832713612, guid: 8a1f96c93a153e34a98b5f6dd6bbfebd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e625b2a3e8343304389cf57758696dc3, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -11091,8 +11091,6 @@ GameObject:
   - component: {fileID: 1219046842}
   - component: {fileID: 1219046841}
   - component: {fileID: 1219046840}
-  - component: {fileID: 1219046848}
-  - component: {fileID: 1219046847}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -11156,8 +11154,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1219046848}
-  selectedCommands: []
+  - {fileID: 1219046835}
+  selectedCommands:
+  - {fileID: 1219046841}
   variables: []
   description: 
   stepPause: 0
@@ -11202,7 +11201,7 @@ MonoBehaviour:
     !
   description: 
   character: {fileID: 27037007}
-  portrait: {fileID: -2520759210819888809, guid: 8a1f96c93a153e34a98b5f6dd6bbfebd, type: 3}
+  portrait: {fileID: 21300000, guid: e625b2a3e8343304389cf57758696dc3, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -11231,7 +11230,7 @@ MonoBehaviour:
     gameObjectVal: {fileID: 416671214}
   activeState:
     booleanRef: {fileID: 0}
-    booleanVal: 0
+    booleanVal: 1
   targetGameObjectOLD: {fileID: 0}
 --- !u!114 &1219046841
 MonoBehaviour:
@@ -11251,7 +11250,7 @@ MonoBehaviour:
     introduce yourself to me?\r"
   description: 
   character: {fileID: 27037007}
-  portrait: {fileID: -2520759210819888809, guid: 8a1f96c93a153e34a98b5f6dd6bbfebd, type: 3}
+  portrait: {fileID: 21300000, guid: e625b2a3e8343304389cf57758696dc3, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -11280,7 +11279,7 @@ MonoBehaviour:
     next.\r"
   description: 
   character: {fileID: 27037007}
-  portrait: {fileID: -2520759210819888809, guid: 8a1f96c93a153e34a98b5f6dd6bbfebd, type: 3}
+  portrait: {fileID: 21300000, guid: e625b2a3e8343304389cf57758696dc3, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -11308,7 +11307,7 @@ MonoBehaviour:
     has now set out to follow his/her(based on the info that user filled) dreams.\r"
   description: 
   character: {fileID: 27037007}
-  portrait: {fileID: -2520759210819888809, guid: 8a1f96c93a153e34a98b5f6dd6bbfebd, type: 3}
+  portrait: {fileID: 21300000, guid: e625b2a3e8343304389cf57758696dc3, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -11379,47 +11378,6 @@ MonoBehaviour:
   eventHandler: {fileID: 1219046844}
   commandList:
   - {fileID: 1219046845}
-  suppressAllAutoSelections: 0
---- !u!114 &1219046847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1219046833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10eaeba5e91be479e95d4fa48679f549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 1219046848}
-  suppressBlockAutoSelect: 0
-  targetButton: {fileID: 0}
---- !u!114 &1219046848
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1219046833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: -34.00006
-    y: -12.333328
-    width: 89.33333
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 8
-  blockName: FillInfo
-  description: 
-  eventHandler: {fileID: 1219046847}
-  commandList: []
   suppressAllAutoSelections: 0
 --- !u!1 &1253412195
 GameObject:
