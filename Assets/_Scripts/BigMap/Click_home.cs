@@ -40,7 +40,7 @@ public class Click_home : MonoBehaviour
                     
                     MapMode.SetActive(false);
 
-
+                    GameObject.Find("SdM_UI").GetComponent<SdM_ui>().Home();
                 }
             }
         }
