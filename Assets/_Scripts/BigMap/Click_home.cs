@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Fungus;
 
 public class Click_home : MonoBehaviour
 {
@@ -41,6 +42,8 @@ public class Click_home : MonoBehaviour
                     MapMode.SetActive(false);
 
                     GameObject.Find("SdM_UI").GetComponent<SdM_ui>().Home();
+
+                    Flowchart.BroadcastFungusMessage("Home_Tutorial");
                 }
             }
         }

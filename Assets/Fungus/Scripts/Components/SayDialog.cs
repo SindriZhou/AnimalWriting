@@ -228,7 +228,7 @@ namespace Fungus
                 if (alpha <= 0f)
                 {                   
                     // Deactivate dialog object once invisible
-                    gameObject.SetActive(false);
+                    //gameObject.SetActive(false);
                 }
             }
         }
