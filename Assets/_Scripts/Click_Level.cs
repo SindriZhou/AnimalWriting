@@ -18,8 +18,8 @@ public class Click_Level : MonoBehaviour
     void Start()
     {
         // 保存摄像机的原始位置和旋转
-        originalPosition = transform.position;
-        originalRotation = transform.rotation;
+        originalPosition = new Vector3(1.8f, 3.7f, -7.1f);
+        originalRotation = new Quaternion(0.29f, -0.25f, 0.08f, 0.9f);
     }
     void Update()
     {

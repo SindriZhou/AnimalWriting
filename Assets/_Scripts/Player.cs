@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 {
     //摄像头
     public GameObject Camera;
-    public float rotationSpeed = 30f; // 旋转速度（度/秒）
+    public float rotationSpeed = 50f; // 旋转速度（度/秒）
     public float targetRotation = 67f; // 目标旋转角度（度）
     private float currentRotation = 0f; // 当前已旋转的角度（度）
     bool CanRotate = false;
