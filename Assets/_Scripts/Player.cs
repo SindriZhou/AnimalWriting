@@ -123,4 +123,10 @@ public class Player : MonoBehaviour
 
         Flowchart.BroadcastFungusMessage("Home_Tutorial2");
     }
+
+    //ĞŞ¸Ä×ÔÎÒ½éÉÜ
+    public void SetIntro()
+    {
+        Flowchart.BroadcastFungusMessage("Intro");
+    }
 }
