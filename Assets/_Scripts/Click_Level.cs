@@ -12,6 +12,7 @@ public class Click_Level : MonoBehaviour
     private bool allowClicking = true; // 控制是否允许点击物体
 
     public GameObject LevelMode;
+    public GameObject Texts;
 
     private Vector3 originalPosition;
     private Quaternion originalRotation;
@@ -79,6 +80,7 @@ public class Click_Level : MonoBehaviour
     public void DelayedOpen()
     {
         LevelMode.SetActive(true);
+        Texts.SetActive(false);
     }
 
     public void MoveCameraBack()
@@ -87,5 +89,6 @@ public class Click_Level : MonoBehaviour
         StartCoroutine(MoveCameraSmoothly(originalPosition, originalRotation.eulerAngles, movementDuration));
         LevelMode.SetActive(false);
         allowClicking = true;
+        Texts.SetActive(true);
     }
 }
