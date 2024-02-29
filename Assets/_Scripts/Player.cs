@@ -33,7 +33,12 @@ public class Player : MonoBehaviour
     public static string Name;
 
     //钱
+    public TextMeshProUGUI Money;
     public int point = 0;
+
+    //个人简介
+    public GameObject IntroWindow;
+    public TextMeshProUGUI Intro;
 
     //当前场景
     public static int SceneNum = 0;
@@ -127,6 +132,19 @@ public class Player : MonoBehaviour
     //修改自我介绍
     public void SetIntro()
     {
-        Flowchart.BroadcastFungusMessage("Intro1");
+        if(Intro.text.Length < 2)
+        { }
+        else
+        {
+            IntroWindow.SetActive(false);
+            Flowchart.BroadcastFungusMessage("Intro1");
+        }
+    }
+
+    //加钱
+    public void AddMoney()
+    {
+        Money.text = (point+100).ToString();
+        point += 100;
     }
 }

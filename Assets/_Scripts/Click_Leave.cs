@@ -40,7 +40,7 @@ public class Click_Leave : MonoBehaviour
 
                     Invoke("DelayedOpen", 1.1f);
 
-
+                    GameObject.Find("SdM_UI").GetComponent<SdM_ui>().DoorClose();
                 }
             }
         }
