@@ -308,6 +308,8 @@ GameObject:
   - component: {fileID: 15924697}
   - component: {fileID: 15924696}
   - component: {fileID: 15924695}
+  - component: {fileID: 15924702}
+  - component: {fileID: 15924701}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -342,7 +344,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 15924690}
   selectedCommands:
-  - {fileID: 15924695}
+  - {fileID: 15924701}
   variables: []
   description: 
   stepPause: 0
@@ -648,6 +650,8 @@ MonoBehaviour:
   - {fileID: 15924693}
   - {fileID: 15924697}
   - {fileID: 15924695}
+  - {fileID: 15924702}
+  - {fileID: 15924701}
   suppressAllAutoSelections: 0
 --- !u!114 &15924691
 MonoBehaviour:
@@ -894,6 +898,44 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &15924701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15924675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 21
+  indentLevel: 0
+  targetObject: {fileID: 404542442}
+  methodName: Quest
+  delay: 0
+--- !u!114 &15924702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15924675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 19
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 1875867907}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  targetGameObjectOLD: {fileID: 0}
 --- !u!43 &28963040
 Mesh:
   m_ObjectHideFlags: 0
@@ -3748,6 +3790,7 @@ MonoBehaviour:
   GameStart: {fileID: 8300000, guid: 27a398e15a03343488576ae015143235, type: 3}
   HomeDoor: {fileID: 8300000, guid: 2ddeddd24789bb2419efb12703ff7ec2, type: 3}
   FillInfo: {fileID: 8300000, guid: 2e739cc523b4b9c49b32fcfa9ff28c65, type: 3}
+  NewQuest: {fileID: 8300000, guid: ccdc1026f90774226b4c0759093380b3, type: 3}
 --- !u!1 &408533447
 GameObject:
   m_ObjectHideFlags: 0
@@ -4539,7 +4582,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4369e54f187ba894492667246a9f835d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 240416d45df4c6c4daec987220246861, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12970,7 +13013,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -141.1, y: -0.00019717216}
-  m_SizeDelta: {x: 53.08, y: 20.11}
+  m_SizeDelta: {x: 342.32, y: 20.11}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1253412197
 MonoBehaviour:
@@ -13006,7 +13049,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quest
+  m_text: Go outside and write a brief message
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

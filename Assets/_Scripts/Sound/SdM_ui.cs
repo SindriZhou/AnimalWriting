@@ -8,7 +8,7 @@ public class SdM_ui : MonoBehaviour
 
     public AudioSource audioSource;
     [SerializeField]
-    private AudioClip GameStart,HomeDoor,FillInfo;
+    private AudioClip GameStart,HomeDoor,FillInfo,NewQuest;
 
     public void Awake()
     {
@@ -30,6 +30,12 @@ public class SdM_ui : MonoBehaviour
     public void Info()
     {
         audioSource.clip = FillInfo;
+        audioSource.Play();
+    }
+
+    public void Quest()
+    {
+        audioSource.clip = NewQuest;
         audioSource.Play();
     }
 }
