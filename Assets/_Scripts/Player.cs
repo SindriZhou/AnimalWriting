@@ -127,6 +127,6 @@ public class Player : MonoBehaviour
     //ĞŞ¸Ä×ÔÎÒ½éÉÜ
     public void SetIntro()
     {
-        Flowchart.BroadcastFungusMessage("Intro");
+        Flowchart.BroadcastFungusMessage("Intro1");
     }
 }
