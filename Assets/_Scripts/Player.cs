@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Fungus;
 
 public class Player : MonoBehaviour
 {
@@ -117,7 +118,9 @@ public class Player : MonoBehaviour
 
     public void SetTag()
     {
-        Stg3_Tag.SetActive(false);
+        Stg3_Tag.transform.parent.gameObject.SetActive(false);
         PlayerStat.SetActive(true);
+
+        Flowchart.BroadcastFungusMessage("Home_Tutorial2");
     }
 }

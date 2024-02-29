@@ -8,7 +8,7 @@ public class SdM_ui : MonoBehaviour
 
     public AudioSource audioSource;
     [SerializeField]
-    private AudioClip GameStart,HomeDoor;
+    private AudioClip GameStart,HomeDoor,FillInfo;
 
     public void Awake()
     {
@@ -25,5 +25,11 @@ public class SdM_ui : MonoBehaviour
     {
         audioSource.clip = HomeDoor;
         audioSource.Play();
-    }    
+    }
+
+    public void Info()
+    {
+        audioSource.clip = FillInfo;
+        audioSource.Play();
+    }
 }
