@@ -3,36 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Click : MonoBehaviour
+public class Click_Arcade : MonoBehaviour
 {
     public Vector3 targetPosition = new Vector3(1, 2, 1); // 要移动到的目标位置
     public Vector3 targetRotation = new Vector3(2, 1, 1); // 要设置的旋转值
-    public string targetTag = "Desk"; // 物体的标签
+    public string targetTag = "Arcade"; // 物体的标签
     public float movementDuration = 1f; // 移动持续时间
 
     private bool allowClicking = true; // 控制是否允许点击物体
 
-    public GameObject Texts;
-
-    public GameObject DiaryIntro;
-    public GameObject WriteDiary;
-    public GameObject DiaryMode; 
     public GameObject TypingGame;
+    public GameObject Texts;
 
     private Vector3 originalPosition;
     private Quaternion originalRotation;
-
-    private Vector3 mapPosition = new Vector3(38, 16.43f, -4.75f);
-    private Quaternion mapRotation = Quaternion.Euler(38.882f, -0.005f, -0.067f);
     void Start()
     {
         // 保存摄像机的原始位置和旋转
         originalPosition = transform.position;
         originalRotation = transform.rotation;
 
-        // 获取按钮组件，并添加点击事件监听
-        Button backButton = GetComponent<Button>();
-        backButton.onClick.AddListener(MoveCameraBack);
     }
     void Update()
     {
@@ -51,30 +41,15 @@ public class Click : MonoBehaviour
                     //MoveCamera(targetPosition, targetRotation);
                     StartCoroutine(MoveCameraSmoothly(targetPosition, targetRotation, movementDuration));
 
+                    
                     Invoke("DelayedOpen", 1.1f);
-
                     allowClicking = false;
 
                 }
             }
         }
 
-        // 检测 ESC 键按下事件
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            // 按下 ESC 键时回到原来的摄像机位置
-            MoveCameraBack();
-        }
     }
-
-    //void MoveCamera(Vector3 targetPosition, Vector3 targetRotation)
-    //{
-    //    // 设置摄像机的位置
-    //    transform.position = targetPosition;
-
-    //    // 设置摄像机的旋转
-    //    transform.rotation = Quaternion.Euler(targetRotation);
-    //}
 
     IEnumerator MoveCameraSmoothly(Vector3 targetPosition, Vector3 targetRotation, float duration)
     {
@@ -102,32 +77,13 @@ public class Click : MonoBehaviour
 
     public void DelayedOpen()
     {
-        DiaryMode.SetActive(true);
+        TypingGame.SetActive(true);
         Texts.SetActive(false);
     }
-    public void MoveCameraBack()
+
+    public void ClickRecovery()
     {
-        // 回到原来的摄像机位置和旋转
-        StartCoroutine(MoveCameraSmoothly(originalPosition, originalRotation.eulerAngles, movementDuration));
-        DiaryMode.SetActive(false);
         allowClicking = true;
-        Texts.SetActive(true);
     }
 
-    public void MoveCameraBackToMap()
-    {
-        // 回到原来的摄像机位置和旋转
-        StartCoroutine(MoveCameraSmoothly(mapPosition, mapRotation.eulerAngles, movementDuration));
-        TypingGame.SetActive(false);
-        allowClicking = true;
-        Texts.SetActive(true);
-    }
-
-    public void BackToIntro()
-    {
-        // 回到原来的摄像机位置和旋转
-        WriteDiary.SetActive(false);
-        DiaryIntro.SetActive(true);
-
-    }
 }
