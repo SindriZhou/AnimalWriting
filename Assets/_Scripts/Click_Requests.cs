@@ -12,6 +12,7 @@ public class Click_Requests : MonoBehaviour
     private bool allowClicking = true; // 控制是否允许点击物体
 
     public GameObject RequestMode;
+    public GameObject Texts;
 
     private Vector3 originalPosition;
     private Quaternion originalRotation;
@@ -80,6 +81,7 @@ public class Click_Requests : MonoBehaviour
     public void DelayedOpen()
     {
         RequestMode.SetActive(true);
+        Texts.SetActive(false);
     }
     public void MoveCameraBack()
     {
@@ -87,5 +89,6 @@ public class Click_Requests : MonoBehaviour
         StartCoroutine(MoveCameraSmoothly(originalPosition, originalRotation.eulerAngles, movementDuration));
         RequestMode.SetActive(false);
         allowClicking = true;
+        Texts.SetActive(true);
     }
 }

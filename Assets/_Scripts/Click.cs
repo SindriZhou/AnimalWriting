@@ -13,10 +13,18 @@ public class Click : MonoBehaviour
 
     private bool allowClicking = true; // 控制是否允许点击物体
 
-    public GameObject DiaryMode;
+    public GameObject Texts;
+
+    public GameObject DiaryIntro;
+    public GameObject WriteDiary;
+    public GameObject DiaryMode; 
+    public GameObject TypingGame;
 
     private Vector3 originalPosition;
     private Quaternion originalRotation;
+
+    private Vector3 mapPosition = new Vector3(38, 16.43f, -4.75f);
+    private Quaternion mapRotation = Quaternion.Euler(38.882f, -0.005f, -0.067f);
     void Start()
     {
         // 保存摄像机的原始位置和旋转
@@ -104,6 +112,7 @@ public class Click : MonoBehaviour
     public void DelayedOpen()
     {
         DiaryMode.SetActive(true);
+        Texts.SetActive(false);
     }
     public void MoveCameraBack()
     {
@@ -111,5 +120,23 @@ public class Click : MonoBehaviour
         StartCoroutine(MoveCameraSmoothly(originalPosition, originalRotation.eulerAngles, movementDuration));
         DiaryMode.SetActive(false);
         allowClicking = true;
+        Texts.SetActive(true);
+    }
+
+    public void MoveCameraBackToMap()
+    {
+        // 回到原来的摄像机位置和旋转
+        StartCoroutine(MoveCameraSmoothly(mapPosition, mapRotation.eulerAngles, movementDuration));
+        TypingGame.SetActive(false);
+        allowClicking = true;
+        Texts.SetActive(true);
+    }
+
+    public void BackToIntro()
+    {
+        // 回到原来的摄像机位置和旋转
+        WriteDiary.SetActive(false);
+        DiaryIntro.SetActive(true);
+
     }
 }

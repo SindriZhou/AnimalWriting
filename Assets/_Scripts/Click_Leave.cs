@@ -11,7 +11,7 @@ public class Click_Leave : MonoBehaviour
     public float movementDuration = 1f; // 移动持续时间
 
     public GameObject MapCanvas;
-
+    
     private Vector3 originalPosition;
     private Quaternion originalRotation;
     void Start()
@@ -74,6 +74,7 @@ public class Click_Leave : MonoBehaviour
     public void DelayedOpen()
     {
         MapCanvas.SetActive(true);
+     
     }
 
 }

@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Click_Level : MonoBehaviour
+public class Click_Arcade : MonoBehaviour
 {
-    public Vector3 targetPosition01 = new Vector3(1, 2, 1); // 要移动到的目标位置
-    public Vector3 targetRotation01 = new Vector3(2, 1, 1); // 要设置的旋转值
-    public string targetTag = "Bed"; // 物体的标签
+    public Vector3 targetPosition = new Vector3(1, 2, 1); // 要移动到的目标位置
+    public Vector3 targetRotation = new Vector3(2, 1, 1); // 要设置的旋转值
+    public string targetTag = "Arcade"; // 物体的标签
     public float movementDuration = 1f; // 移动持续时间
 
     private bool allowClicking = true; // 控制是否允许点击物体
 
-    public GameObject LevelMode;
+    public GameObject TypingGame;
     public GameObject Texts;
 
     private Vector3 originalPosition;
@@ -19,8 +20,9 @@ public class Click_Level : MonoBehaviour
     void Start()
     {
         // 保存摄像机的原始位置和旋转
-        originalPosition = new Vector3(1.8f, 3.7f, -7.1f);
-        originalRotation = new Quaternion(0.29f, -0.25f, 0.08f, 0.9f);
+        originalPosition = transform.position;
+        originalRotation = transform.rotation;
+
     }
     void Update()
     {
@@ -37,22 +39,17 @@ public class Click_Level : MonoBehaviour
                 if (hit.collider.CompareTag(targetTag))
                 {
                     //MoveCamera(targetPosition, targetRotation);
-                    StartCoroutine(MoveCameraSmoothly(targetPosition01, targetRotation01, movementDuration));
+                    StartCoroutine(MoveCameraSmoothly(targetPosition, targetRotation, movementDuration));
 
+                    
                     Invoke("DelayedOpen", 1.1f);
                     allowClicking = false;
+
                 }
             }
         }
 
-        //// 检测 ESC 键按下事件
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    // 按下 ESC 键时回到原来的摄像机位置
-        //    MoveCameraBack();
-        //}
     }
-
 
     IEnumerator MoveCameraSmoothly(Vector3 targetPosition, Vector3 targetRotation, float duration)
     {
@@ -75,20 +72,18 @@ public class Click_Level : MonoBehaviour
         // 确保最终位置和旋转是精确的
         transform.position = targetPosition;
         transform.rotation = Quaternion.Euler(targetRotation);
+
     }
 
     public void DelayedOpen()
     {
-        LevelMode.SetActive(true);
+        TypingGame.SetActive(true);
         Texts.SetActive(false);
     }
 
-    public void MoveCameraBack()
+    public void ClickRecovery()
     {
-        // 回到原来的摄像机位置和旋转
-        StartCoroutine(MoveCameraSmoothly(originalPosition, originalRotation.eulerAngles, movementDuration));
-        LevelMode.SetActive(false);
         allowClicking = true;
-        Texts.SetActive(true);
     }
+
 }
