@@ -12792,8 +12792,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad3c949e33056845abd9f5405469e3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {x: 1.8, y: 3.7, z: -7.1}
-  targetRotation: {x: 34.673, y: -30.523, z: 0}
+  targetPosition: {x: 2.6, y: 6.2, z: -9.9}
+  targetRotation: {x: 36, y: -19, z: 0}
   targetTag: Home
   movementDuration: 1
   MapMode: {fileID: 1745430094}
