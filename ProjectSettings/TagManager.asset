@@ -9,7 +9,7 @@ TagManager:
   - Bookshelf
   - Door
   - Home
-  - Arcade
+  - Intro
   layers:
   - Default
   - TransparentFX

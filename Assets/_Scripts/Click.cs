@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Click : MonoBehaviour
@@ -27,8 +28,8 @@ public class Click : MonoBehaviour
     void Start()
     {
         // 保存摄像机的原始位置和旋转
-        originalPosition = transform.position;
-        originalRotation = transform.rotation;
+        originalPosition = new Vector3(1.8f, 3.7f, -7.1f);
+        originalRotation = new Quaternion(0.29f, -0.25f, 0.08f, 0.9f);
 
         // 获取按钮组件，并添加点击事件监听
         Button backButton = GetComponent<Button>();
@@ -39,32 +40,40 @@ public class Click : MonoBehaviour
         // 检测鼠标左键点击
         if (Input.GetMouseButtonDown(0) && allowClicking)
         {
-            // 发射一条射线检测是否点击到了物体
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            if (EventSystem.current.IsPointerOverGameObject())
             {
-                // 如果点击到了指定标签的物体，则移动摄像机到目标位置并设置旋转
-                if (hit.collider.CompareTag(targetTag))
+                return;
+            }
+            else
+            {
+                // 发射一条射线检测是否点击到了物体
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
                 {
-                    //MoveCamera(targetPosition, targetRotation);
-                    StartCoroutine(MoveCameraSmoothly(targetPosition, targetRotation, movementDuration));
+                    // 如果点击到了指定标签的物体，则移动摄像机到目标位置并设置旋转
+                    if (hit.collider.CompareTag(targetTag))
+                    {
+                        //MoveCamera(targetPosition, targetRotation);
+                        StartCoroutine(MoveCameraSmoothly(targetPosition, targetRotation, movementDuration));
 
-                    Invoke("DelayedOpen", 1.1f);
+                        Invoke("DelayedOpen", 1.1f);
 
-                    allowClicking = false;
+                        allowClicking = false;
 
+                    }
                 }
             }
         }
 
         // 检测 ESC 键按下事件
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            // 按下 ESC 键时回到原来的摄像机位置
-            MoveCameraBack();
-        }
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    // 按下 ESC 键时回到原来的摄像机位置
+        //    MoveCameraBack();
+        //}
     }
 
     //void MoveCamera(Vector3 targetPosition, Vector3 targetRotation)

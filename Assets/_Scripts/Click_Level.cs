@@ -19,8 +19,8 @@ public class Click_Level : MonoBehaviour
     void Start()
     {
         // 保存摄像机的原始位置和旋转
-        originalPosition = transform.position;
-        originalRotation = transform.rotation;
+        originalPosition = new Vector3(1.8f, 3.7f, -7.1f);
+        originalRotation = new Quaternion(0.29f, -0.25f, 0.08f, 0.9f);
     }
     void Update()
     {
@@ -45,12 +45,12 @@ public class Click_Level : MonoBehaviour
             }
         }
 
-        // 检测 ESC 键按下事件
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            // 按下 ESC 键时回到原来的摄像机位置
-            MoveCameraBack();
-        }
+        //// 检测 ESC 键按下事件
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    // 按下 ESC 键时回到原来的摄像机位置
+        //    MoveCameraBack();
+        //}
     }
 
 
