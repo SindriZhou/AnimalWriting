@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Typing_Game_V02.unity
     guid: 76b641c542dbec540ab3f95c65e0d51c
+  - enabled: 1
+    path: Assets/_Scenes/Intro_Level.unity
+    guid: 97dcfa64684347a42bed47c122930f79
   m_configObjects: {}
