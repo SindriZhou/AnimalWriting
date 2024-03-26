@@ -28,8 +28,8 @@ public class Click : MonoBehaviour
     void Start()
     {
         // 保存摄像机的原始位置和旋转
-        originalPosition = new Vector3(1.8f, 3.7f, -7.1f);
-        originalRotation = new Quaternion(0.29f, -0.25f, 0.08f, 0.9f);
+        originalPosition = transform.position;
+        originalRotation = transform.rotation;
 
         // 获取按钮组件，并添加点击事件监听
         Button backButton = GetComponent<Button>();
