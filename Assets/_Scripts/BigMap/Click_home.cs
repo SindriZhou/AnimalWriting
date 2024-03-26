@@ -43,7 +43,7 @@ public class Click_home : MonoBehaviour
 
                     GameObject.Find("SdM_UI").GetComponent<SdM_ui>().DoorOpen();
 
-                    //Flowchart.BroadcastFungusMessage("Home_Tutorial");
+                    Flowchart.BroadcastFungusMessage("Home_Tutorial");
                 }
             }
         }
