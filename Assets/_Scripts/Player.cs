@@ -138,6 +138,7 @@ public class Player : MonoBehaviour
         {
             IntroWindow.SetActive(false);
             Flowchart.BroadcastFungusMessage("Intro1");
+            Click_Plaza.allowClicking = true;
         }
     }
 

@@ -92,5 +92,6 @@ public class Click_PlazaCenter : MonoBehaviour
         //LevelMode.SetActive(false);
         allowClicking = true;
         //Texts.SetActive(true);
+        GameObject.Find("Flowchart").GetComponent<Flowchart>().SendFungusMessage("PlazaCenterBack");
     }
 }

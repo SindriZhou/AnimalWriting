@@ -9,7 +9,7 @@ public class Click_Plaza : MonoBehaviour
     public string targetTag = "Plaza"; // 物体的标签
     public float movementDuration = 1f; // 移动持续时间
 
-    private bool allowClicking = true; // 控制是否允许点击物体
+    public static bool allowClicking = true; // 控制是否允许点击物体
 
     //public GameObject LevelMode;
     //public GameObject Texts;

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class oneUser : MonoBehaviour
 {
-    public GameObject Friends_Side,oneFriend;
+    public GameObject oneFriend;
 
     public string userName, Intro;
     public Sprite userImage;
@@ -40,8 +40,9 @@ public class oneUser : MonoBehaviour
             canAdd = false;
             Name = userName;
             Image = userImage;
-            Friends_Side.SetActive(true);
+           // Friends_Side.SetActive(true);
             oneFriend.GetComponent<oneFriend>().SetFriend(userName,userImage);
+            GameObject.Find("SdM_UI").GetComponent<SdM_ui>().AddFriend();
         }
     }
 }
