@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fungus;
 
 public class Click_PlazaCenter : MonoBehaviour
 {
@@ -41,6 +42,8 @@ public class Click_PlazaCenter : MonoBehaviour
 
                     Invoke("DelayedOpen", 1.1f);
                     allowClicking = false;
+
+                    GameObject.Find("Flowchart").GetComponent<Flowchart>().SendFungusMessage("PlazaCenter");
                 }
             }
         }
@@ -82,12 +85,12 @@ public class Click_PlazaCenter : MonoBehaviour
         centerWindow.SetActive(true);
     }
 
-    //public void MoveCameraBack()
-    //{
-    //    // 回到原来的摄像机位置和旋转
-    //    StartCoroutine(MoveCameraSmoothly(new Vector3(1.79999995f, 3.70000005f, -7.0999999f), new Vector3(34.673f, -30.523f, 0), movementDuration));
-    //    LevelMode.SetActive(false);
-    //    allowClicking = true;
-    //    Texts.SetActive(true);
-    //}
+    public void MoveCameraBack()
+    {
+        // 回到原来的摄像机位置和旋转
+        StartCoroutine(MoveCameraSmoothly(new Vector3(-0.860000014f, 10.7799997f, 15.4399996f), new Vector3(40.976f, -31.52f, -0.062f), movementDuration));
+        //LevelMode.SetActive(false);
+        allowClicking = true;
+        //Texts.SetActive(true);
+    }
 }

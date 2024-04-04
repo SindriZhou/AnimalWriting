@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Click_Plaza : MonoBehaviour
 {
-    public Vector3 targetPosition01 = new Vector3(1.46000004f, 11.1999998f, 11.5f); // 要移动到的目标位置
-    public Vector3 targetRotation01 = new Vector3(20.757f, -31.497f, -0.05f); // 要设置的旋转值
+    public Vector3 targetPosition01 = new Vector3(-0.860000014f, 10.7799997f, 15.4399996f); // 要移动到的目标位置
+    public Vector3 targetRotation01 = new Vector3(40.976f, -31.52f, -0.062f); // 要设置的旋转值
     public string targetTag = "Plaza"; // 物体的标签
     public float movementDuration = 1f; // 移动持续时间
 
@@ -40,7 +40,7 @@ public class Click_Plaza : MonoBehaviour
                     StartCoroutine(MoveCameraSmoothly(targetPosition01, targetRotation01, movementDuration));
 
                     Invoke("DelayedOpen", 1.1f);
-                    allowClicking = false;
+                    //allowClicking = false;
                 }
             }
         }
