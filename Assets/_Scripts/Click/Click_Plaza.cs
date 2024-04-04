@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Click_Level : MonoBehaviour
+public class Click_Plaza : MonoBehaviour
 {
-    public Vector3 targetPosition01 = new Vector3(1, 2, 1); // 要移动到的目标位置
-    public Vector3 targetRotation01 = new Vector3(2, 1, 1); // 要设置的旋转值
-    public string targetTag = "Bed"; // 物体的标签
+    public Vector3 targetPosition01 = new Vector3(1.46000004f, 11.1999998f, 11.5f); // 要移动到的目标位置
+    public Vector3 targetRotation01 = new Vector3(20.757f, -31.497f, -0.05f); // 要设置的旋转值
+    public string targetTag = "Plaza"; // 物体的标签
     public float movementDuration = 1f; // 移动持续时间
 
     private bool allowClicking = true; // 控制是否允许点击物体
 
-    public GameObject LevelMode;
-    public GameObject Texts;
+    //public GameObject LevelMode;
+    //public GameObject Texts;
 
     private Vector3 originalPosition;
     private Quaternion originalRotation;
@@ -77,18 +77,16 @@ public class Click_Level : MonoBehaviour
         transform.rotation = Quaternion.Euler(targetRotation);
     }
 
-    public void DelayedOpen()
-    {
-        LevelMode.SetActive(true);
-        Texts.SetActive(false);
-    }
+    //public void DelayedOpen()
+    //{
+    //    LevelMode.SetActive(true);
+    //    Texts.SetActive(false);
+    //}
 
     public void MoveCameraBack()
     {
         // 回到原来的摄像机位置和旋转
-        StartCoroutine(MoveCameraSmoothly(originalPosition, originalRotation.eulerAngles, movementDuration));
-        LevelMode.SetActive(false);
+        StartCoroutine(MoveCameraSmoothly(targetPosition01, targetRotation01, movementDuration));
         allowClicking = true;
-        Texts.SetActive(true);
     }
 }

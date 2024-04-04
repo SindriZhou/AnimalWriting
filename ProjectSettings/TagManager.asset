@@ -10,6 +10,9 @@ TagManager:
   - Door
   - Home
   - Intro
+  - RaycastBlock
+  - Plaza
+  - PlazaCenter
   layers:
   - Default
   - TransparentFX
