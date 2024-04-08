@@ -86,7 +86,7 @@ public class Click_Requests : MonoBehaviour
     public void MoveCameraBack()
     {
         // 回到原来的摄像机位置和旋转
-        StartCoroutine(MoveCameraSmoothly(originalPosition, originalRotation.eulerAngles, movementDuration));
+        StartCoroutine(MoveCameraSmoothly(new Vector3(1.79999995f, 3.70000005f, -7.0999999f), new Vector3(34.673f, -30.523f, 0), movementDuration));
         RequestMode.SetActive(false);
         Click.allowClicking = true;
         Texts.SetActive(true);

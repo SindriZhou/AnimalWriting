@@ -117,7 +117,7 @@ public class Click : MonoBehaviour
     public void MoveCameraBack()
     {
         // 回到原来的摄像机位置和旋转
-        StartCoroutine(MoveCameraSmoothly(originalPosition, originalRotation.eulerAngles, movementDuration));
+        StartCoroutine(MoveCameraSmoothly(new Vector3(1.79999995f, 3.70000005f, -7.0999999f), new Vector3(34.673f, -30.523f, 0), movementDuration));
         DiaryMode.SetActive(false);
         allowClicking = true;
         Texts.SetActive(true);
@@ -126,7 +126,7 @@ public class Click : MonoBehaviour
     public void MoveCameraBackToMap()
     {
         // 回到原来的摄像机位置和旋转
-        StartCoroutine(MoveCameraSmoothly(mapPosition, mapRotation.eulerAngles, movementDuration));
+        StartCoroutine(MoveCameraSmoothly(new Vector3(1.79999995f, 3.70000005f, -7.0999999f), new Vector3(34.673f, -30.523f, 0), movementDuration));
         TypingGame.SetActive(false);
         allowClicking = true;
         Texts.SetActive(true);

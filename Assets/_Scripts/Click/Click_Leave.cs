@@ -74,7 +74,7 @@ public class Click_Leave : MonoBehaviour
     public void DelayedOpen()
     {
         MapCanvas.SetActive(true);
-     
+
     }
 
 }
