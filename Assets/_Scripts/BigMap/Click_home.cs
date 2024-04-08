@@ -34,7 +34,7 @@ public class Click_home : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 // 如果点击到了指定标签的物体，则移动摄像机到目标位置并设置旋转
-                if (hit.collider.CompareTag(targetTag))
+                if (hit.collider.CompareTag(targetTag) && Click.allowClicking)
                 {
                     //MoveCamera(targetPosition, targetRotation);
                     StartCoroutine(MoveCameraSmoothly(targetPosition, targetRotation, movementDuration));

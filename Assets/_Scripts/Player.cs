@@ -107,9 +107,10 @@ public class Player : MonoBehaviour
         }
         else
         {
-            NameText.GetComponent<TextMeshProUGUI>().text = GameObject.Find("Flowchart").GetComponent<Flowchart>().GetVariable<StringVariable>("PlayerName").Value = NameInput.GetComponent<TextMeshProUGUI>().text;
+            Name = NameText.GetComponent<TextMeshProUGUI>().text = GameObject.Find("Flowchart").GetComponent<Flowchart>().GetVariable<StringVariable>("PlayerName").Value = NameInput.GetComponent<TextMeshProUGUI>().text;
             Stg1_Name.SetActive(false);
             Stg2_Portrait.SetActive(true);
+            Debug.Log(Name);
         }
     }
 

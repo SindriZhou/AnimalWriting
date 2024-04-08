@@ -431,6 +431,8 @@ GameObject:
   - component: {fileID: 15924831}
   - component: {fileID: 15924837}
   - component: {fileID: 15924838}
+  - component: {fileID: 15924839}
+  - component: {fileID: 15924840}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -463,8 +465,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 15924690}
-  selectedCommands: []
+  - {fileID: 15924783}
+  selectedCommands:
+  - {fileID: 15924814}
   variables:
   - {fileID: 15924707}
   - {fileID: 15924706}
@@ -569,8 +572,8 @@ MonoBehaviour:
   commandList:
   - {fileID: 15924710}
   - {fileID: 15924709}
-  - {fileID: 15924685}
   - {fileID: 15924828}
+  - {fileID: 15924685}
   - {fileID: 15924680}
   - {fileID: 15924684}
   - {fileID: 15924686}
@@ -2505,6 +2508,7 @@ MonoBehaviour:
   eventHandler: {fileID: 15924721}
   commandList:
   - {fileID: 15924719}
+  - {fileID: 15924839}
   - {fileID: 15924733}
   - {fileID: 15924718}
   - {fileID: 15924717}
@@ -3129,10 +3133,10 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 15924763}
   commandList:
+  - {fileID: 15924836}
   - {fileID: 15924764}
   - {fileID: 15924811}
   - {fileID: 15924813}
-  - {fileID: 15924836}
   - {fileID: 15924738}
   - {fileID: 15924741}
   - {fileID: 15924740}
@@ -4605,6 +4609,7 @@ MonoBehaviour:
   - {fileID: 15924798}
   - {fileID: 15924797}
   - {fileID: 15924786}
+  - {fileID: 15924840}
   - {fileID: 15924827}
   - {fileID: 15924810}
   - {fileID: 15924814}
@@ -4790,7 +4795,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 500.50348
-    y: 463.32437
+    y: 462.5668
     width: 97.727295
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -6157,7 +6162,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &15924831
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -6174,7 +6179,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &15924832
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -6191,7 +6196,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &15924833
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -6208,7 +6213,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &15924834
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -6225,7 +6230,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &15924835
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -6259,7 +6264,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &15924837
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -6279,7 +6284,7 @@ MonoBehaviour:
   _textObjectObsolete: {fileID: 0}
 --- !u!114 &15924838
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -6298,6 +6303,40 @@ MonoBehaviour:
     booleanRef: {fileID: 0}
     booleanVal: 1
   targetGameObjectOLD: {fileID: 0}
+--- !u!114 &15924839
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15924675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 143
+  indentLevel: 1
+  targetObject: {fileID: 963194225}
+  methodName: CantClick
+  delay: 0
+--- !u!114 &15924840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15924675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 144
+  indentLevel: 0
+  targetObject: {fileID: 963194225}
+  methodName: SetText
+  delay: 0
 --- !u!43 &28963040
 Mesh:
   m_ObjectHideFlags: 0
