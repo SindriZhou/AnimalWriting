@@ -39,7 +39,7 @@ public class ClickAndOpen : MonoBehaviour
                         //MoveCamera(targetPosition, targetRotation);
                         A.SetActive(true);
                         Flowchart.BroadcastFungusMessage("Intro");
-                        Click_Plaza.allowClicking = false;
+                        Click.allowClicking = false;
                     }
                 }
             }

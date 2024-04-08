@@ -11,7 +11,7 @@ public class Click : MonoBehaviour
     public string targetTag = "Desk"; // 物体的标签
     public float movementDuration = 1f; // 移动持续时间
 
-    private bool allowClicking = true; // 控制是否允许点击物体
+    public static bool allowClicking = true; // 控制是否允许点击物体
 
     public GameObject Texts;
 
@@ -138,5 +138,15 @@ public class Click : MonoBehaviour
         WriteDiary.SetActive(false);
         DiaryIntro.SetActive(true);
 
+    }
+
+    public void CantClick()
+    {
+        allowClicking = false ;
+    }
+
+    public void CanClick()
+    {
+        allowClicking = true;
     }
 }
