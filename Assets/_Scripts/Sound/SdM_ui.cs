@@ -8,7 +8,7 @@ public class SdM_ui : MonoBehaviour
 
     public AudioSource audioSource;
     [SerializeField]
-    private AudioClip GameStart,HomeDoorOpen,HomeDoorClose,FillInfo,NewQuest;
+    private AudioClip GameStart,HomeDoorOpen,HomeDoorClose,FillInfo,NewQuest,addFriend,openChat;
 
     public void Awake()
     {
@@ -42,6 +42,18 @@ public class SdM_ui : MonoBehaviour
     public void Quest()
     {
         audioSource.clip = NewQuest;
+        audioSource.Play();
+    }
+
+    public void AddFriend()
+    {
+        audioSource.clip = addFriend;
+        audioSource.Play();
+    }
+
+    public void OpenChat()
+    {
+        audioSource.clip = openChat;
         audioSource.Play();
     }
 }

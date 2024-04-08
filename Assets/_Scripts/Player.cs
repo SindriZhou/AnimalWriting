@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 
     //Ãû×Ö
     public GameObject NameInput, NameText;
-    public static string Name;
+    public static string Name = "PlayerName";
 
     //Ç®
     public TextMeshProUGUI Money;
@@ -107,9 +107,10 @@ public class Player : MonoBehaviour
         }
         else
         {
-            NameText.GetComponent<TextMeshProUGUI>().text = NameInput.GetComponent<TextMeshProUGUI>().text;
+            Name = NameText.GetComponent<TextMeshProUGUI>().text = GameObject.Find("Flowchart").GetComponent<Flowchart>().GetVariable<StringVariable>("PlayerName").Value = NameInput.GetComponent<TextMeshProUGUI>().text;
             Stg1_Name.SetActive(false);
             Stg2_Portrait.SetActive(true);
+            Debug.Log(Name);
         }
     }
 
@@ -138,6 +139,7 @@ public class Player : MonoBehaviour
         {
             IntroWindow.SetActive(false);
             Flowchart.BroadcastFungusMessage("Intro1");
+            Click.allowClicking = true;
         }
     }
 
