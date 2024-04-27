@@ -16,10 +16,14 @@ public class Click : MonoBehaviour
 
     public GameObject DiaryIntro;
     public GameObject WriteDiary;
-    public GameObject DiaryMode;
+    public GameObject DiaryMode; 
+    public GameObject TypingGame;
 
     private Vector3 originalPosition;
     private Quaternion originalRotation;
+
+    private Vector3 mapPosition = new Vector3(38, 16.43f, -4.75f);
+    private Quaternion mapRotation = Quaternion.Euler(38.882f, -0.005f, -0.067f);
     void Start()
     {
         // 保存摄像机的原始位置和旋转
@@ -106,6 +110,15 @@ public class Click : MonoBehaviour
         // 回到原来的摄像机位置和旋转
         StartCoroutine(MoveCameraSmoothly(originalPosition, originalRotation.eulerAngles, movementDuration));
         DiaryMode.SetActive(false);
+        allowClicking = true;
+        Texts.SetActive(true);
+    }
+
+    public void MoveCameraBackToMap()
+    {
+        // 回到原来的摄像机位置和旋转
+        StartCoroutine(MoveCameraSmoothly(mapPosition, mapRotation.eulerAngles, movementDuration));
+        TypingGame.SetActive(false);
         allowClicking = true;
         Texts.SetActive(true);
     }
